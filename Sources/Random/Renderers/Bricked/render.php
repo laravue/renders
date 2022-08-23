@@ -365,11 +365,11 @@ $savethumb
 ";
 
     //Basic render
-        $pyFileName = "".$serverRoot."/render/python/1.py";
+        $pyFileName = "".$serverRoot."/render/python/".$id.".py";
         file_put_contents($pyFileName, $python);
-        exec(escapeshellcmd("blender --background -t 5 --python ".$_SERVER['DOCUMENT_ROOT']."/render/python/1.py -noaudio"));
+        exec(escapeshellcmd("blender --background -t 5 --python ".$_SERVER['DOCUMENT_ROOT']."/render/python/".$id.".py -noaudio"));
     //Thumbnail render
         $pyFileNamet = "".$serverRoot."/render/python/1_thumb.py";
         file_put_contents($pyFileNamet, $pythonthumb);
-        exec(escapeshellcmd("blender --background -t 5 --python ".$_SERVER['DOCUMENT_ROOT']."/render/python/1_thumb.py -noaudio"));
+        exec(escapeshellcmd("blender --background -t 5 --python ".$_SERVER['DOCUMENT_ROOT']."/render/python/".$id."_thumb.py -noaudio"));
 ?>
